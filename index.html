@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURIG Energy · Sua empresa pagando menos na conta de luz</title>
+<meta name="description" content="Envie a conta de luz da sua empresa e receba um estudo gratuito mostrando quanto dá para economizar com mercado livre de energia, geração distribuída compartilhada ou outra solução.">
+<meta name="theme-color" content="#141B15">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="AURIG Energy">
+<meta property="og:title" content="AURIG Energy · Sua empresa pode pagar até 35% menos na conta de luz">
+<meta property="og:description" content="Envie sua fatura e receba um estudo gratuito de economia em até 2 dias úteis. Mercado livre de energia e geração distribuída compartilhada.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141B15'/%3E%3Cg stroke='%23C8A766' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M20 22h22M36 16l11 19M45 34L34 52M44 42H22M28 48L17 29M19 30l11-19'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  :root{
+    --ink:#141B15;
+    --musgo:#2B3628;
+    --musgo-2:#3A4835;
+    --musgo-medio:#5A6B4C;
+    --salvia:#A7B59A;
+    --creme:#F5F3EB;
+    --papel:#FBFAF6;
+    --branco:#ffffff;
+    --texto:#1C231B;
+    --texto-2:#4E5847;
+    --texto-3:#6F7867;
+    --linha:rgba(43,54,40,.13);
+    --dourado:#C8A766;
+    --dourado-claro:#E3CD9D;
+    --dourado-texto:#8A6B2E;
+    --ok:#2E7D4F;
+    --erro:#B3412E;
+    --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans:'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --raio:18px;
+    --sombra:0 24px 60px -30px rgba(20,27,21,.45);
+    --sombra-forte:0 40px 90px -40px rgba(0,0,0,.65);
+    --container:1200px;
+    --ease:cubic-bezier(.16,.8,.3,1);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+  body{font-variant-numeric:lining-nums;font-family:var(--sans);color:var(--texto);background:var(--papel);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.1;color:var(--musgo);letter-spacing:-.01em;text-wrap:balance;font-variant-numeric:lining-nums}
+  a{color:inherit;text-decoration:none}
+  button,input,select{font:inherit;color:inherit}
+  img,svg{display:block}
+  .container{max-width:var(--container);margin:0 auto;padding:0 28px}
+  section{position:relative}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  :focus-visible{outline:2px solid var(--dourado);outline-offset:3px;border-radius:6px}
+  .ico{width:20px;height:20px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  /* ---------- Reveal (só com JS e sem preferência por menos movimento) ---------- */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .reveal.d1{transition-delay:.06s}.js .reveal.d2{transition-delay:.12s}.js .reveal.d3{transition-delay:.18s}.js .reveal.d4{transition-delay:.24s}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .js .reveal{opacity:1;transform:none;transition:none}
+    *{animation:none!important;transition-duration:.01ms!important}
+  }
+
+  /* ---------- Botões ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:.98rem;
+    padding:15px 26px;border-radius:999px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap;
+    transition:transform .3s var(--ease),box-shadow .3s,background .3s,color .3s,border-color .3s}
+  .btn .ico{width:18px;height:18px}
+  .btn-gold{background:var(--dourado);color:var(--ink);box-shadow:0 12px 30px -14px rgba(200,167,102,.9)}
+  .btn-gold:hover{background:var(--dourado-claro);transform:translateY(-2px)}
+  .btn-ghost{background:rgba(245,243,235,.06);color:var(--creme);border-color:rgba(245,243,235,.35)}
+  .btn-ghost:hover{border-color:var(--dourado);color:var(--dourado-claro);transform:translateY(-2px)}
+  .btn-dark{background:var(--musgo);color:var(--creme)}
+  .btn-dark:hover{background:var(--ink);transform:translateY(-2px)}
+  .btn-line{background:transparent;color:var(--musgo);border-color:rgba(43,54,40,.3)}
+  .btn-line:hover{border-color:var(--musgo);transform:translateY(-2px)}
+  .btn-wa .ico{fill:currentColor;stroke:none}
+  .btn[disabled]{opacity:.7;cursor:wait;transform:none}
+  .w100{width:100%}
+
+  /* ---------- Cabeçalho ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:background .35s,box-shadow .35s,padding .35s}
+  header.scrolled{background:rgba(20,27,21,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 10px 30px -20px rgba(0,0,0,.7);padding:11px 0}
+  header .container{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1.38rem;font-weight:600;color:var(--creme);letter-spacing:.02em}
+  .logo .mark{width:40px;height:40px;color:var(--salvia)}
+  .logo .sub{color:var(--dourado);font-weight:400}
+  nav.main{display:flex;align-items:center;gap:30px}
+  nav.main a{color:rgba(245,243,235,.86);font-size:.94rem;font-weight:600;position:relative;transition:color .25s}
+  nav.main a::after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:0;background:var(--dourado);transition:width .3s}
+  nav.main a:hover{color:var(--creme)}
+  nav.main a:hover::after{width:100%}
+  .header-cta{display:flex;align-items:center;gap:12px}
+  .header-cta .btn{padding:11px 20px;font-size:.92rem}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:10px}
+  .menu-toggle span{width:24px;height:2px;background:var(--creme);border-radius:2px}
+  .mobile-nav{position:fixed;inset:0;z-index:1400;background:var(--ink);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;opacity:0;visibility:hidden;transition:.35s}
+  .mobile-nav.open{opacity:1;visibility:visible}
+  .mobile-nav a{color:var(--creme);font-family:var(--serif);font-size:1.7rem}
+  .mobile-nav .btn{margin-top:14px;font-family:var(--sans);font-size:1rem}
+  .mobile-nav .close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--creme);font-size:2.4rem;cursor:pointer;line-height:1;padding:8px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--ink);color:var(--creme);overflow:hidden;padding:132px 0 84px}
+  .hero::before{content:"";position:absolute;top:-260px;right:-180px;width:820px;height:820px;border-radius:50%;
+    background:radial-gradient(circle,rgba(200,167,102,.20),rgba(200,167,102,0) 62%);pointer-events:none}
+  .hero::after{content:"";position:absolute;bottom:-300px;left:-200px;width:700px;height:700px;border-radius:50%;
+    background:radial-gradient(circle,rgba(167,181,154,.12),rgba(167,181,154,0) 65%);pointer-events:none}
+  .hero .bg-mark{position:absolute;right:-140px;top:50%;width:760px;height:760px;transform:translateY(-50%);color:var(--dourado);opacity:.05;pointer-events:none}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:center}
+  .hero-grid>*{min-width:0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado);margin-bottom:22px}
+  .eyebrow::before{content:"";width:30px;height:1.5px;background:var(--dourado)}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4.35rem);color:var(--creme);line-height:1.02;letter-spacing:-.025em}
+  .hero h1 em{font-style:italic;color:var(--dourado-claro);font-weight:500}
+  .hero .lead{font-size:clamp(1.04rem,1.5vw,1.2rem);margin:24px 0 32px;max-width:560px;color:rgba(245,243,235,.8)}
+  .hero .lead b{color:var(--creme);font-weight:700}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .checks{list-style:none;display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:30px}
+  .checks li{display:flex;align-items:center;gap:8px;font-size:.92rem;color:rgba(245,243,235,.78)}
+  .checks .ico{width:18px;height:18px;color:var(--dourado);stroke-width:2.4}
+
+  /* Simulador */
+  .sim{background:var(--papel);color:var(--texto);border-radius:24px;padding:32px 30px 26px;box-shadow:var(--sombra-forte);position:relative;border-top:4px solid var(--dourado)}
+  .sim-tag{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--dourado-texto);background:rgba(200,167,102,.16);padding:6px 11px;border-radius:999px}
+  .sim-tag .ico{width:14px;height:14px;stroke-width:2.2}
+  .sim h2{font-size:1.42rem;margin:14px 0 18px;color:var(--musgo)}
+  .sim-input{display:flex;align-items:center;gap:8px;border:1.5px solid var(--linha);border-radius:14px;padding:4px 16px;background:var(--branco);transition:border-color .25s}
+  .sim-input:focus-within{border-color:var(--dourado)}
+  .sim-input span{font-weight:700;color:var(--texto-3);font-size:1.15rem}
+  .sim-input input{border:none;outline:none;background:transparent;width:100%;font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--musgo);padding:6px 0}
+  .sim-input small{color:var(--texto-3);font-size:.86rem;white-space:nowrap}
+  input[type=range].sim-range{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;margin:20px 0 6px;cursor:pointer;
+    background:linear-gradient(90deg,var(--dourado) var(--p,40%),rgba(43,54,40,.14) var(--p,40%))}
+  .sim-range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--musgo);border:4px solid var(--dourado);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+  .sim-range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--musgo);border:4px solid var(--dourado)}
+  .sim-scale{display:flex;justify-content:space-between;font-size:.76rem;color:var(--texto-3)}
+  .sim-out{margin:20px 0 18px;padding:18px 18px 16px;border-radius:16px;background:var(--musgo);color:var(--creme)}
+  .sim-out .lbl{font-size:.8rem;color:rgba(245,243,235,.72);font-weight:600}
+  .sim-out .big{font-family:var(--serif);font-size:clamp(1.55rem,2.4vw,1.95rem);font-weight:600;color:var(--dourado-claro);line-height:1.15;margin:4px 0 8px}
+  .sim-out .mes{font-size:.86rem;color:rgba(245,243,235,.72);margin:-2px 0 10px}
+  .sim-out .via{font-size:.86rem;color:rgba(245,243,235,.82);line-height:1.45}
+  .sim-out .via b{color:var(--creme)}
+  .sim-note{font-size:.76rem;color:var(--texto-3);margin-top:12px;line-height:1.45;text-align:center}
+
+  /* ---------- Faixa de segmentos ---------- */
+  .segs{background:var(--musgo);color:rgba(245,243,235,.8);padding:22px 0;border-top:1px solid rgba(167,181,154,.14)}
+  .segs .container{display:flex;align-items:center;gap:14px 28px;flex-wrap:wrap;justify-content:center;font-size:.9rem;font-weight:600}
+  .segs .lbl{color:var(--dourado);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+  .segs .item{display:flex;align-items:center;gap:8px}
+  .segs .item::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--salvia);opacity:.7}
+
+  /* ---------- Cabeçalho de seção ---------- */
+  .pad{padding:104px 0}
+  .sec-head{max-width:720px;margin:0 auto 52px;text-align:center}
+  .sec-head.left{margin-left:0;text-align:left}
+  .sec-tag{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--musgo-medio);margin-bottom:14px}
+  .sec-tag::before{content:"";width:26px;height:1.5px;background:var(--dourado)}
+  .sec-head h2{font-size:clamp(1.95rem,3.8vw,2.85rem)}
+  .sec-head p{margin-top:16px;font-size:1.07rem;color:var(--texto-2)}
+
+  /* ---------- Diagnóstico ---------- */
+  #diagnostico{background:var(--papel)}
+  .diag-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .diag{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:26px 22px;transition:transform .35s var(--ease),box-shadow .35s}
+  .diag:hover{transform:translateY(-6px);box-shadow:var(--sombra)}
+  .diag .n{font-variant-numeric:lining-nums;font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--dourado-texto);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+  .diag .n .ico{width:26px;height:26px;color:var(--musgo-medio)}
+  .diag h3{font-size:1.1rem;margin-bottom:8px;line-height:1.2}
+  .diag p{font-size:.9rem;color:var(--texto-2);line-height:1.55}
+  .diag-cta{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:40px;text-align:center}
+  .diag-cta p{font-weight:600;color:var(--texto-2)}
+
+  /* ---------- Soluções ---------- */
+  #solucoes{background:var(--creme)}
+  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:46px}
+  .feat{background:var(--musgo);color:var(--creme);border-radius:22px;padding:36px 34px;position:relative;overflow:hidden;cursor:pointer;transition:transform .4s var(--ease),box-shadow .4s}
+  .feat:hover{transform:translateY(-6px);box-shadow:var(--sombra)}
+  .feat::after{content:"";position:absolute;top:-120px;right:-120px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(200,167,102,.22),transparent 68%)}
+  .feat .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;position:relative;z-index:1}
+  .feat .badge{font-size:.74rem;font-weight:800;letter-spacing:.06em;color:var(--ink);background:var(--dourado);padding:6px 12px;border-radius:999px}
+  .feat .icw{width:54px;height:54px;border-radius:14px;background:rgba(245,243,235,.08);display:flex;align-items:center;justify-content:center;color:var(--dourado)}
+  .feat .icw .ico{width:28px;height:28px}
+  .feat h3{color:var(--creme);font-size:1.7rem;margin-bottom:10px;position:relative;z-index:1}
+  .feat p{color:rgba(245,243,235,.8);position:relative;z-index:1}
+  .feat .meta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 6px;position:relative;z-index:1}
+  .feat .meta span{font-size:.82rem;border:1px solid rgba(167,181,154,.35);padding:6px 12px;border-radius:999px;color:rgba(245,243,235,.88)}
+  .feat ul{list-style:none;margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;position:relative;z-index:1}
+  .feat li{display:flex;gap:8px;align-items:flex-start;font-size:.92rem;color:rgba(245,243,235,.86)}
+  .feat li .ico{width:17px;height:17px;color:var(--dourado);margin-top:3px;stroke-width:2.4}
+  .more{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:700;font-size:.92rem;color:var(--dourado-claro);position:relative;z-index:1;transition:gap .3s}
+  .more .ico{width:16px;height:16px}
+  .feat:hover .more{gap:13px}
+  .sol-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .outras-link{text-align:center;color:var(--texto-2);font-size:.96rem;max-width:720px;margin:0 auto}
+  .outras-link a{color:var(--musgo);font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+  #outras{background:var(--papel)}
+  .sol{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:26px 22px;cursor:pointer;text-align:left;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s;position:relative}
+  .sol:hover{transform:translateY(-6px);box-shadow:var(--sombra);border-color:transparent}
+  .sol .icw{width:48px;height:48px;border-radius:12px;background:rgba(167,181,154,.24);display:flex;align-items:center;justify-content:center;color:var(--musgo);margin-bottom:18px;transition:.35s}
+  .sol .icw .ico{width:24px;height:24px}
+  .sol:hover .icw{background:var(--musgo);color:var(--dourado)}
+  .sol h3{font-size:1.1rem;margin-bottom:8px}
+  .sol p{font-size:.88rem;color:var(--texto-2);line-height:1.5}
+  .sol .more{color:var(--musgo-medio);font-size:.86rem;margin-top:14px}
+
+  /* ---------- Modal ---------- */
+  .modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(20,27,21,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+  .modal-overlay.open{opacity:1;visibility:visible}
+  .modal{background:var(--papel);border-radius:22px;max-width:580px;width:100%;padding:44px 40px 36px;position:relative;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);transform:translateY(20px) scale(.98);transition:transform .35s var(--ease);max-height:88vh;overflow-y:auto;border-top:4px solid var(--dourado)}
+  .modal.wide{max-width:720px}
+  .modal-overlay.open .modal{transform:none}
+  .modal-close{position:absolute;top:16px;right:16px;background:rgba(90,107,76,.12);border:none;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.3rem;color:var(--musgo);display:flex;align-items:center;justify-content:center;transition:.3s}
+  .modal-close:hover{background:var(--musgo);color:var(--dourado)}
+  .modal .icw{width:54px;height:54px;border-radius:14px;background:rgba(167,181,154,.24);display:flex;align-items:center;justify-content:center;color:var(--musgo);margin-bottom:18px}
+  .modal .icw .ico{width:28px;height:28px}
+  .modal h3{font-size:1.65rem;margin-bottom:12px}
+  .modal h4{font-family:var(--sans);font-size:.98rem;font-weight:800;margin:20px 0 6px;color:var(--musgo)}
+  .modal p{color:var(--texto-2);margin-bottom:14px}
+  .modal ul{list-style:none;margin:6px 0 24px}
+  .modal li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;color:var(--texto)}
+  .modal li .ico{width:18px;height:18px;color:var(--dourado-texto);margin-top:4px;stroke-width:2.4}
+  .modal .legal p{font-size:.93rem;margin-bottom:8px}
+
+  /* ---------- Como funciona ---------- */
+  #como{background:var(--papel)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+  .step{background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);padding:32px 28px;position:relative}
+  .step .num{width:46px;height:46px;border-radius:50%;background:var(--musgo);color:var(--dourado);font-family:var(--serif);font-weight:700;font-size:1.25rem;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .step .when{position:absolute;top:30px;right:26px;font-size:.78rem;font-weight:800;color:var(--dourado-texto);background:rgba(200,167,102,.15);padding:5px 10px;border-radius:999px}
+  .step h3{font-size:1.28rem;margin-bottom:8px}
+  .step p{color:var(--texto-2);font-size:.96rem}
+
+  /* ---------- Fundador ---------- */
+  #fundador{background:var(--creme)}
+  .fund{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  .fund-card{background:var(--musgo);border-radius:24px;padding:40px 34px;color:var(--creme);position:relative;overflow:hidden;text-align:center}
+  .fund-card::before{content:"";position:absolute;inset:auto -80px -120px auto;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(200,167,102,.2),transparent 68%)}
+  .avatar{width:132px;height:132px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(140deg,var(--musgo-2),var(--ink));border:2px solid var(--dourado);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.9rem;font-weight:600;color:var(--dourado-claro);position:relative;overflow:hidden}
+  .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .fund-photo{position:relative;aspect-ratio:4/5;overflow:hidden}
+  .fund-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+  .fund-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(180deg,rgba(43,54,40,0),rgba(43,54,40,.55) 45%,var(--musgo) 94%)}
+  .fund-card.com-foto{padding:0;text-align:left}
+  .fund-card.com-foto::before{display:none}
+  .fund-card.com-foto .avatar{display:none}
+  .fund-card.com-foto .fund-info{position:relative;z-index:1;padding:0 30px 30px;margin-top:-84px}
+  .fund-card.com-foto .chips{justify-content:flex-start}
+  .fund-card .nm{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--creme)}
+  .fund-card .rl{color:var(--dourado);font-size:.88rem;font-weight:700;letter-spacing:.06em;margin-top:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px;position:relative}
+  .chips span{font-size:.78rem;border:1px solid rgba(167,181,154,.35);padding:6px 11px;border-radius:999px;color:rgba(245,243,235,.86)}
+  .fund-txt h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:18px}
+  .fund-txt p{color:var(--texto-2);font-size:1.05rem;margin-bottom:14px}
+  .fund-txt blockquote{font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.4;color:var(--musgo);border-left:3px solid var(--dourado);padding:4px 0 4px 20px;margin:24px 0 28px}
+  .fund-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn-in .ico{fill:currentColor;stroke:none}
+
+  /* ---------- Envio da fatura ---------- */
+  #analise{background:var(--ink);color:var(--creme);overflow:hidden}
+  #analise::before{content:"";position:absolute;top:-200px;left:-160px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(200,167,102,.14),transparent 66%)}
+  .an-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start;position:relative;z-index:1}
+  .an-grid>*,.fund>*,.ag-wrap>*{min-width:0}
+  .an-txt .sec-tag{color:var(--dourado)}
+  .an-txt h2{color:var(--creme);font-size:clamp(1.95rem,3.6vw,2.75rem)}
+  .an-txt>p{color:rgba(245,243,235,.8);margin-top:16px;font-size:1.06rem}
+  .recebe{list-style:none;margin:28px 0 30px;display:grid;gap:14px}
+  .recebe li{display:flex;gap:14px;align-items:flex-start}
+  .recebe .icw{width:40px;height:40px;border-radius:11px;background:rgba(200,167,102,.14);color:var(--dourado);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .recebe b{display:block;color:var(--creme);font-size:1rem}
+  .recebe span{color:rgba(245,243,235,.7);font-size:.92rem}
+  .alt-wa{display:inline-flex;align-items:center;gap:10px;color:var(--dourado-claro);font-weight:700;border-bottom:1px solid rgba(227,205,157,.4);padding-bottom:2px}
+  .alt-wa .ico{fill:currentColor;stroke:none;width:18px;height:18px}
+
+  .form-card{background:var(--papel);color:var(--texto);border-radius:24px;padding:34px 32px;box-shadow:var(--sombra-forte)}
+  .form-card h3{font-size:1.4rem;margin-bottom:4px}
+  .form-card .hint{font-size:.9rem;color:var(--texto-3);margin-bottom:20px}
+  .dropzone{border:2px dashed rgba(90,107,76,.35);border-radius:16px;padding:26px 20px;text-align:center;cursor:pointer;transition:.3s;background:var(--branco);position:relative}
+  .dropzone:hover,.dropzone.drag{border-color:var(--dourado);background:rgba(200,167,102,.07)}
+  .dropzone.has{border-style:solid;border-color:var(--ok);background:rgba(46,125,79,.05)}
+  .dropzone.bad{border-color:var(--erro)}
+  .dropzone .up{width:52px;height:52px;border-radius:50%;margin:0 auto 12px;background:rgba(200,167,102,.16);display:flex;align-items:center;justify-content:center;color:var(--dourado-texto)}
+  .dropzone.has .up{background:rgba(46,125,79,.12);color:var(--ok)}
+  .dropzone .up .ico{width:24px;height:24px}
+  .dropzone strong{display:block;font-size:1.02rem;color:var(--musgo)}
+  .dropzone span{font-size:.86rem;color:var(--texto-3)}
+  .dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .fields .full{grid-column:1/-1}
+  .field label{display:block;font-size:.8rem;font-weight:700;color:var(--texto-2);margin-bottom:6px}
+  .field label i{font-style:normal;color:var(--texto-3);font-weight:500}
+  .field input,.field select{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--linha);background:var(--branco);font-size:1rem;color:var(--texto);transition:border-color .25s,box-shadow .25s}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--dourado);box-shadow:0 0 0 4px rgba(200,167,102,.15)}
+  .field.bad input,.field.bad select{border-color:var(--erro)}
+  .money{position:relative}
+  .money::before{content:"R$";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--texto-3);font-weight:700;font-size:.95rem}
+  .money input{padding-left:42px}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:.84rem;color:var(--texto-2);line-height:1.5;cursor:pointer}
+  .consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--musgo);flex:0 0 auto}
+  .consent a{text-decoration:underline;color:var(--musgo);font-weight:700}
+  .consent.bad{color:var(--erro)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .form-card .btn[type=submit]{margin-top:18px;width:100%}
+  .form-msg{margin-top:12px;font-size:.9rem;font-weight:600;min-height:1px}
+  .form-msg.err{color:var(--erro)}
+  .form-msg a{text-decoration:underline}
+  .secure{display:flex;gap:9px;align-items:center;justify-content:center;margin-top:14px;font-size:.8rem;color:var(--texto-3)}
+  .secure .ico{width:15px;height:15px}
+  .spin{width:18px;height:18px;border-radius:50%;border:2.5px solid rgba(20,27,21,.25);border-top-color:var(--ink);animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .success{display:none;text-align:center;padding:26px 6px}
+  .success.show{display:block}
+  .success .ok{width:68px;height:68px;border-radius:50%;background:rgba(46,125,79,.12);color:var(--ok);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+  .success .ok .ico{width:32px;height:32px;stroke-width:2.4}
+  .success h3{margin-bottom:10px}
+  .success p{color:var(--texto-2);margin-bottom:20px}
+
+  /* ---------- Agende ---------- */
+  #agende{background:var(--papel)}
+  .ag-wrap{display:grid;grid-template-columns:.85fr 1.15fr;border-radius:26px;overflow:hidden;box-shadow:var(--sombra);background:var(--branco);border:1px solid var(--linha)}
+  .ag-side{background:var(--musgo);color:var(--creme);padding:46px 40px;position:relative;overflow:hidden}
+  .ag-side::after{content:"";position:absolute;bottom:-140px;right:-100px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(200,167,102,.2),transparent 68%)}
+  .ag-side .sec-tag{color:var(--dourado)}
+  .ag-side h2{color:var(--creme);font-size:clamp(1.8rem,3vw,2.3rem);margin-bottom:14px}
+  .ag-side p{color:rgba(245,243,235,.8)}
+  .ag-side ul{list-style:none;margin:24px 0 28px;display:grid;gap:12px;position:relative;z-index:1}
+  .ag-side li{display:flex;gap:10px;align-items:flex-start;color:rgba(245,243,235,.88)}
+  .ag-side li .ico{width:18px;height:18px;color:var(--dourado);margin-top:3px;stroke-width:2.4}
+  .ag-side .btn{position:relative;z-index:1}
+  .ag-form{padding:46px 44px}
+  .ag-form .form-card{box-shadow:none;padding:0;background:transparent;border-radius:0}
+
+  /* ---------- FAQ ---------- */
+  #faq{background:var(--creme)}
+  .faq-list{max-width:820px;margin:0 auto}
+  .faq-list details{border-bottom:1px solid rgba(43,54,40,.16)}
+  .faq-list summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--serif);font-size:1.16rem;font-weight:600;color:var(--musgo);transition:color .25s}
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary:hover{color:var(--dourado-texto)}
+  .faq-list .plus{flex:0 0 auto;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--salvia);position:relative;transition:.35s}
+  .faq-list .plus::before,.faq-list .plus::after{content:"";position:absolute;left:50%;top:50%;background:var(--musgo);border-radius:2px;transform:translate(-50%,-50%)}
+  .faq-list .plus::before{width:12px;height:2px}
+  .faq-list .plus::after{width:2px;height:12px;transition:.35s}
+  .faq-list details[open] .plus{background:var(--musgo);border-color:var(--musgo)}
+  .faq-list details[open] .plus::before{background:var(--dourado)}
+  .faq-list details[open] .plus::after{height:0}
+  .faq-list .ans{padding:0 0 24px;color:var(--texto-2);max-width:700px}
+
+  /* ---------- Rodapé ---------- */
+  footer{background:var(--ink);color:rgba(245,243,235,.72);padding:84px 0 30px}
+  .foot-cta{text-align:center;padding-bottom:56px;margin-bottom:48px;border-bottom:1px solid rgba(167,181,154,.18)}
+  .foot-cta h2{color:var(--creme);font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:12px}
+  .foot-cta h2 em{color:var(--dourado-claro)}
+  .foot-cta p{max-width:520px;margin:0 auto 28px;color:rgba(245,243,235,.76)}
+  .foot-cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  .foot-grid p{font-size:.93rem;max-width:320px;margin-top:14px}
+  .foot-col h4{font-family:var(--sans);color:var(--creme);font-size:.95rem;font-weight:800;margin-bottom:14px}
+  .foot-col a,.foot-col button{display:flex;align-items:center;gap:9px;color:rgba(245,243,235,.72);font-size:.93rem;padding:6px 0;background:none;border:none;cursor:pointer;text-align:left;transition:color .25s}
+  .foot-col a:hover,.foot-col button:hover{color:var(--dourado)}
+  .foot-col .ico{width:16px;height:16px}
+  .foot-col .wa .ico,.foot-col .in .ico{fill:currentColor;stroke:none}
+  .lgpd{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;color:var(--salvia);border:1px solid rgba(167,181,154,.3);padding:8px 14px;border-radius:999px;margin-top:16px}
+  .lgpd .ico{width:15px;height:15px}
+  .foot-bottom{padding-top:24px;border-top:1px solid rgba(167,181,154,.16);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.84rem;color:rgba(245,243,235,.5)}
+  .foot-bottom button{background:none;border:none;color:inherit;cursor:pointer;text-decoration:underline;font-size:inherit}
+
+  /* ---------- WhatsApp flutuante + barra mobile ---------- */
+  .wa-float{position:fixed;bottom:24px;right:24px;z-index:1500;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .3s,opacity .3s}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float .ico{width:30px;height:30px;fill:#fff;stroke:none}
+  .mobile-bar{display:none}
+
+  /* ---------- Responsivo ---------- */
+  @media (max-width:1080px){
+    .diag-grid{grid-template-columns:repeat(3,1fr)}
+    .sol-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:960px){
+    nav.main,.header-cta .btn{display:none}
+    .menu-toggle{display:flex}
+    .hero{padding:112px 0 64px}
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .hero .bg-mark{width:520px;height:520px;right:-220px;top:220px;transform:none}
+    .feat-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .fund{grid-template-columns:1fr;gap:36px}
+    .fund-card{max-width:460px;width:100%;margin:0 auto}
+    .an-grid{grid-template-columns:1fr;gap:36px}
+    .ag-wrap{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .foot-grid>div:first-child{grid-column:1/-1}
+  }
+  @media (max-width:640px){
+    .container{padding:0 18px}
+    .pad{padding:72px 0}
+    .logo{font-size:1.22rem}
+    .logo .mark{width:34px;height:34px}
+    .hero{padding:96px 0 52px}
+    .hero .bg-mark{display:none}
+    .hero h1{font-size:2.35rem}
+    .hero .lead{margin:18px 0 24px;font-size:1.02rem}
+    .hero .lead .xtra{display:none}
+    .hero-ctas{flex-direction:column}
+    .hero-ctas .btn{width:100%}
+    .checks{gap:8px 18px;margin-top:22px}
+    .checks li{font-size:.86rem}
+    .sim{padding:26px 20px 22px}
+    .sim-input input{font-size:1.7rem}
+    .segs .container{justify-content:flex-start;gap:8px 18px;font-size:.84rem}
+    .segs .lbl{width:100%}
+    .diag-grid,.sol-grid{grid-template-columns:1fr}
+    .diag{padding:22px 20px}
+    .feat{padding:28px 22px}
+    .feat ul{grid-template-columns:1fr}
+    .fields{grid-template-columns:1fr}
+    .form-card{padding:26px 20px}
+    .ag-side{padding:36px 24px}
+    .fund-photo{aspect-ratio:1/1}
+    .fund-photo img{object-position:50% 12%}
+    .fund-card.com-foto .fund-info{padding:0 22px 26px;margin-top:-70px}
+    .ag-form{padding:32px 20px}
+    .modal{padding:40px 22px 28px}
+    .foot-grid{grid-template-columns:1fr}
+    .foot-bottom{flex-direction:column;text-align:center;align-items:center}
+    footer{padding-bottom:110px}
+    .wa-float{display:none}
+    .mobile-bar{display:flex;gap:10px;position:fixed;bottom:0;left:0;right:0;z-index:1450;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(20,27,21,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 -10px 30px -16px rgba(0,0,0,.8);transform:translateY(110%);transition:transform .35s var(--ease)}
+    .mobile-bar.show{transform:none}
+    .mobile-bar .btn-gold{flex:1;padding:14px 16px}
+    .mobile-bar .btn-wa{width:52px;padding:0;background:#25D366;color:#fff;flex:0 0 52px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Ícones -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mark" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="17.0" y1="23.5" x2="39.0" y2="23.5"/><line x1="18.6" y1="20.7" x2="40.6" y2="20.7"/><line x1="20.2" y1="17.9" x2="42.2" y2="17.9"/><line x1="21.8" y1="15.1" x2="43.8" y2="15.1"/><line x1="23.5" y1="12.3" x2="45.5" y2="12.3"/><line x1="31.9" y1="14.8" x2="42.9" y2="33.8"/><line x1="35.1" y1="14.8" x2="46.1" y2="33.8"/><line x1="38.3" y1="14.8" x2="49.3" y2="33.8"/><line x1="41.6" y1="14.8" x2="52.6" y2="33.8"/><line x1="44.8" y1="14.8" x2="55.8" y2="33.8"/><line x1="46.9" y1="23.3" x2="35.9" y2="42.3"/><line x1="48.5" y1="26.1" x2="37.5" y2="45.1"/><line x1="50.1" y1="28.9" x2="39.1" y2="47.9"/><line x1="51.7" y1="31.7" x2="40.7" y2="50.7"/><line x1="53.3" y1="34.5" x2="42.3" y2="53.5"/><line x1="47.0" y1="40.5" x2="25.0" y2="40.5"/><line x1="45.4" y1="43.3" x2="23.4" y2="43.3"/><line x1="43.8" y1="46.1" x2="21.8" y2="46.1"/><line x1="42.2" y1="48.9" x2="20.2" y2="48.9"/><line x1="40.5" y1="51.7" x2="18.5" y2="51.7"/><line x1="32.1" y1="49.2" x2="21.1" y2="30.2"/><line x1="28.9" y1="49.2" x2="17.9" y2="30.2"/><line x1="25.7" y1="49.2" x2="14.7" y2="30.2"/><line x1="22.4" y1="49.2" x2="11.4" y2="30.2"/><line x1="19.2" y1="49.2" x2="8.2" y2="30.2"/><line x1="17.1" y1="40.7" x2="28.1" y2="21.7"/><line x1="15.5" y1="37.9" x2="26.5" y2="18.9"/><line x1="13.9" y1="35.1" x2="24.9" y2="16.1"/><line x1="12.3" y1="32.3" x2="23.3" y2="13.3"/><line x1="10.7" y1="29.5" x2="21.7" y2="10.5"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.519 5.276l-.999 3.648 3.969-1.063zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.695.247-1.29.173-1.414z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+  <symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-gd" viewBox="0 0 24 24"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="9" x2="12" y2="2"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/><line x1="23" y1="22" x2="1" y2="22"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="10" x2="23" y2="14"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5a1 1 0 0 0-1 1v8h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 2v20l2.33-1.5L9.67 22 12 20.5 14.33 22l2.34-1.5L19 22V2l-2.33 1.5L14.33 2 12 3.5 9.67 2 7.33 3.5z"/><line x1="9" y1="8.5" x2="15" y2="8.5"/><line x1="9" y1="12.5" x2="15" y2="12.5"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M3.34 19a10 10 0 1 1 17.32 0"/><path d="M12 14l4-4"/><circle cx="12" cy="14" r="1"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16" y2="18"/><line x1="8" y1="18" x2="12" y2="18"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></symbol>
+</svg>
+
+<!-- ============ CABEÇALHO ============ -->
+<header id="header">
+  <div class="container">
+    <a href="#topo" class="logo" aria-label="AURIG Energy, início">
+      <svg class="mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span>AURIG<span class="sub"> Energy</span></span>
+    </a>
+    <nav class="main" aria-label="Principal">
+      <a href="#solucoes">Soluções</a>
+      <a href="#como">Como funciona</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#analise" class="btn btn-gold">Análise gratuita</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="mobileNav" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <button class="close" id="mobileClose" aria-label="Fechar menu">&times;</button>
+  <a href="#solucoes">Soluções</a>
+  <a href="#como">Como funciona</a>
+  <a href="#agende">Agendar conversa</a>
+  <a href="#faq">Dúvidas</a>
+  <a href="#analise" class="btn btn-gold">Quero minha análise gratuita</a>
+</div>
+
+<main id="topo">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <svg class="bg-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Energia para empresas</span>
+      <h1>Sua empresa pode pagar até <em>35% menos</em> na conta de luz.</h1>
+      <p class="lead">Envie sua fatura e receba, <b>em até 2 dias úteis</b>, um estudo gratuito mostrando quanto dá para economizar e qual caminho faz sentido: mercado livre de energia, geração distribuída compartilhada ou outro.<span class="xtra"> Para contas a partir de R$ 500 por mês, do comércio à indústria.</span></p>
+      <div class="hero-ctas">
+        <a href="#analise" class="btn btn-gold">Quero minha análise gratuita <svg class="ico"><use href="#i-arrow"/></svg></a>
+        <a href="#" class="btn btn-ghost btn-wa" data-wa><svg class="ico"><use href="#i-wa"/></svg> Falar no WhatsApp</a>
+      </div>
+      <ul class="checks">
+        <li><svg class="ico"><use href="#i-check"/></svg>Gratuito e sem compromisso</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Opções sem obra e sem investimento</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Dados protegidos (LGPD)</li>
+      </ul>
+    </div>
+
+    <aside class="sim" aria-labelledby="simTitulo">
+      <span class="sim-tag"><svg class="ico"><use href="#i-calc"/></svg>Simulador rápido</span>
+      <h2 id="simTitulo">Quanto sua empresa paga de luz por mês?</h2>
+      <label class="sim-input" for="simValor">
+        <span>R$</span>
+        <input id="simValor" inputmode="numeric" autocomplete="off" value="8.000" aria-describedby="simNota">
+        <small>/mês</small>
+      </label>
+      <input type="range" class="sim-range" id="simRange" min="0" max="1000" step="1" aria-label="Ajustar valor da conta">
+      <div class="sim-scale"><span>R$ 500</span><span>R$ 500 mil</span></div>
+      <div class="sim-out" aria-live="polite">
+        <div class="lbl">Economia estimada por ano</div>
+        <div class="big" id="simAno">—</div>
+        <div class="mes" id="simMes"></div>
+        <div class="via">Caminho provável: <b id="simVia">—</b><br><span id="simPct"></span></div>
+      </div>
+      <a href="#analise" class="btn btn-gold w100" id="simCta">Ver o valor exato da minha conta <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <p class="sim-note" id="simNota">Estimativa com base em faixas típicas de desconto do mercado. O número real sai da análise da sua fatura.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ SEGMENTOS ============ -->
+<div class="segs">
+  <div class="container">
+    <span class="lbl">Para quem é</span>
+    <span class="item">Indústrias</span>
+    <span class="item">Supermercados e varejo</span>
+    <span class="item">Clínicas e hospitais</span>
+    <span class="item">Escolas</span>
+    <span class="item">Condomínios</span>
+    <span class="item">Hotéis e restaurantes</span>
+    <span class="item">Agronegócio</span>
+  </div>
+</div>
+
+<!-- ============ DIAGNÓSTICO ============ -->
+<section class="pad" id="diagnostico">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">O que olhamos na sua conta</span>
+      <h2>Onde a conta de luz costuma pesar mais do que deveria</h2>
+      <p>Cada fatura conta uma história. Na análise gratuita, checamos ponto a ponto onde está o dinheiro que dá para recuperar.</p>
+    </div>
+    <div class="diag-grid">
+      <article class="diag reveal d1">
+        <div class="n">01 <svg class="ico"><use href="#i-receipt"/></svg></div>
+        <h3>Tarifa cheia da distribuidora</h3>
+        <p>Quem fica no mercado cativo paga o preço regulado, sem negociar. Mercado livre e GD mudam isso.</p>
+      </article>
+      <article class="diag reveal d2">
+        <div class="n">02 <svg class="ico"><use href="#i-gauge"/></svg></div>
+        <h3>Demanda mal dimensionada</h3>
+        <p>Contratar demais é pagar pelo que não usa. Contratar de menos gera multa por ultrapassagem.</p>
+      </article>
+      <article class="diag reveal d3">
+        <div class="n">03 <svg class="ico"><use href="#i-alert"/></svg></div>
+        <h3>Multa por energia reativa</h3>
+        <p>Excedente de reativo vira cobrança extra todo mês, e quase sempre tem solução técnica.</p>
+      </article>
+      <article class="diag reveal d4">
+        <div class="n">04 <svg class="ico"><use href="#i-clock"/></svg></div>
+        <h3>Consumo no horário de ponta</h3>
+        <p>Na ponta, a energia custa várias vezes mais. Armazenamento e automação deslocam esse consumo.</p>
+      </article>
+      <article class="diag reveal d4">
+        <div class="n">05 <svg class="ico"><use href="#i-flag"/></svg></div>
+        <h3>Bandeiras e reajustes</h3>
+        <p>Sem um contrato próprio, sua empresa absorve cada bandeira tarifária e cada reajuste anual.</p>
+      </article>
+    </div>
+    <div class="diag-cta reveal">
+      <p>A análise gratuita checa cada um desses pontos na sua fatura.</p>
+      <a href="#analise" class="btn btn-dark">Analisar minha conta <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUÇÕES ============ -->
+<section class="pad" id="solucoes">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Nossas soluções</span>
+      <h2>A solução certa para cada perfil de consumo</h2>
+      <p>Mercado livre para quem está em média ou alta tensão. GD compartilhada para contas menores. Os dois sem investimento inicial.</p>
+    </div>
+
+    <div class="feat-grid" id="featGrid"></div>
+    <p class="outras-link reveal">Também atuamos com energia solar, baterias, gestão de utilities, automações e eletropostos. <a href="#outras">Ver outras soluções →</a></p>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="pad" id="como">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Como funciona</span>
+      <h2>Da fatura à economia em três passos</h2>
+      <p>Você só precisa enviar a conta. O trabalho técnico e a burocracia ficam com a gente.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal d1">
+        <span class="when">2 minutos</span>
+        <div class="num">1</div>
+        <h3>Você envia sua conta</h3>
+        <p>Pelo site ou pelo WhatsApp. PDF ou foto, sem compromisso e com total sigilo.</p>
+      </div>
+      <div class="step reveal d2">
+        <span class="when">até 2 dias úteis</span>
+        <div class="num">2</div>
+        <h3>Recebe o estudo</h3>
+        <p>Quanto dá para economizar, qual solução faz sentido (e qual não faz) e o prazo para começar.</p>
+      </div>
+      <div class="step reveal d3">
+        <span class="when">você decide</span>
+        <div class="num">3</div>
+        <h3>Começa a economizar</h3>
+        <p>Se aprovar, cuidamos de contratos, distribuidora e acompanhamento mês a mês.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENVIO DA FATURA ============ -->
+<section class="pad" id="analise">
+  <div class="container an-grid">
+    <div class="an-txt reveal">
+      <span class="sec-tag">Análise gratuita</span>
+      <h2>Envie sua conta de luz e receba seu estudo de economia</h2>
+      <p>Quanto mais completa a fatura, mais preciso o estudo. Serve PDF ou foto do celular.</p>
+      <ul class="recebe">
+        <li><span class="icw"><svg class="ico"><use href="#i-chart"/></svg></span><div><b>Quanto você pode economizar</b><span>Por mês e por ano, com base no seu consumo real.</span></div></li>
+        <li><span class="icw"><svg class="ico"><use href="#i-compass"/></svg></span><div><b>Qual solução faz sentido</b><span>E qual não faz, para você não gastar à toa.</span></div></li>
+        <li><span class="icw"><svg class="ico"><use href="#i-list"/></svg></span><div><b>Prazos e próximos passos</b><span>Sem letras miúdas e sem compromisso.</span></div></li>
+      </ul>
+      <a href="#" class="alt-wa" data-wa data-wa-text="Olá! Quero a análise gratuita da conta de luz da minha empresa. Vou enviar a fatura por aqui."><svg class="ico"><use href="#i-wa"/></svg> Prefere mandar a foto da conta pelo WhatsApp?</a>
+    </div>
+
+    <div class="form-card reveal d1">
+      <form id="faturaForm" novalidate>
+        <h3>Sua análise gratuita</h3>
+        <p class="hint">Leva menos de 2 minutos.</p>
+
+        <div class="dropzone" id="dropzone">
+          <input type="file" id="fileInput" name="arquivo" accept=".pdf,.jpg,.jpeg,.png,.webp,.heic,application/pdf,image/*" aria-label="Selecionar fatura de energia">
+          <div class="up"><svg class="ico" id="dzIco"><use href="#i-upload"/></svg></div>
+          <strong id="dzTitulo">Arraste sua fatura aqui ou toque para escolher</strong>
+          <span id="dzSub">PDF, JPG ou PNG · até 10 MB</span>
+        </div>
+
+        <div class="fields">
+          <div class="field"><label for="fNome">Nome</label><input id="fNome" name="nome" autocomplete="name" required placeholder="Seu nome"></div>
+          <div class="field"><label for="fWa">WhatsApp</label><input id="fWa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" required placeholder="(11) 90000-0000" data-phone></div>
+          <div class="field"><label for="fEmpresa">Empresa <i>(opcional)</i></label><input id="fEmpresa" name="empresa" autocomplete="organization" placeholder="Nome da empresa"></div>
+          <div class="field"><label for="fValor">Valor médio da conta <i>(opcional)</i></label><div class="money"><input id="fValor" name="valor_conta" inputmode="numeric" placeholder="Ex.: 8.000" data-money></div></div>
+          <div class="field full"><label for="fEmail">E-mail <i>(opcional)</i></label><input id="fEmail" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br"></div>
+        </div>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="consent"><input type="checkbox" name="consentimento" required> <span>Autorizo a AURIG a usar meus dados e minha fatura para preparar a análise, conforme a <a href="#" data-privacidade>Política de Privacidade</a>.</span></label>
+        <button type="submit" class="btn btn-gold">Enviar e receber minha análise</button>
+        <div class="form-msg" role="status" aria-live="polite"></div>
+        <div class="secure"><svg class="ico"><use href="#i-lock"/></svg> Sigilo total. Usamos sua fatura só para a análise.</div>
+      </form>
+      <div class="success" id="faturaOk" tabindex="-1">
+        <div class="ok"><svg class="ico"><use href="#i-check"/></svg></div>
+        <h3 data-ok-title>Recebemos sua conta!</h3>
+        <p data-ok-text>Em até 2 dias úteis você recebe o estudo de economia no seu WhatsApp.</p>
+        <a href="#" class="btn btn-dark btn-wa" data-wa data-wa-text="Olá! Acabei de enviar minha fatura pelo site da AURIG."><svg class="ico"><use href="#i-wa"/></svg> Quer adiantar? Fale agora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGENDE ============ -->
+<section class="pad" id="agende">
+  <div class="container">
+    <div class="ag-wrap reveal">
+      <div class="ag-side">
+        <span class="sec-tag">Prefere conversar antes?</span>
+        <h2>Agende uma conversa com um especialista</h2>
+        <p>Sem a fatura em mãos? Sem problema. Em uma conversa rápida você entende o que se aplica ao seu negócio.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>Online ou por telefone, no horário que for melhor</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Mercado livre, GD, solar e baterias explicados sem jargão</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Sem custo e sem compromisso</li>
+        </ul>
+        <a href="#" class="btn btn-ghost btn-wa" data-wa><svg class="ico"><use href="#i-wa"/></svg> Ou chame no WhatsApp</a>
+      </div>
+      <div class="ag-form">
+        <div class="form-card">
+          <form id="reuniaoForm" novalidate>
+            <h3>Escolha o melhor horário</h3>
+            <p class="hint">Confirmamos pelo WhatsApp.</p>
+            <div class="fields">
+              <div class="field full"><label for="rNome">Nome</label><input id="rNome" name="nome" autocomplete="name" required placeholder="Seu nome"></div>
+              <div class="field"><label for="rWa">WhatsApp</label><input id="rWa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" required placeholder="(11) 90000-0000" data-phone></div>
+              <div class="field"><label for="rEmail">E-mail <i>(opcional)</i></label><input id="rEmail" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com.br"></div>
+              <div class="field full"><label for="rEmpresa">Empresa <i>(opcional)</i></label><input id="rEmpresa" name="empresa" autocomplete="organization" placeholder="Nome da empresa"></div>
+              <div class="field"><label for="rData">Data preferida</label><input id="rData" name="data" type="date"></div>
+              <div class="field"><label for="rPeriodo">Período</label><select id="rPeriodo" name="periodo"><option value="">Tanto faz</option><option>Manhã</option><option>Tarde</option></select></div>
+            </div>
+            <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label class="consent"><input type="checkbox" name="consentimento" required> <span>Concordo com a <a href="#" data-privacidade>Política de Privacidade</a>.</span></label>
+            <button type="submit" class="btn btn-gold">Solicitar horário</button>
+            <div class="form-msg" role="status" aria-live="polite"></div>
+          </form>
+          <div class="success" id="reuniaoOk" tabindex="-1">
+            <div class="ok"><svg class="ico"><use href="#i-check"/></svg></div>
+            <h3 data-ok-title>Pedido recebido!</h3>
+            <p data-ok-text>Vamos confirmar o horário com você pelo WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="pad" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Dúvidas frequentes</span>
+      <h2>Perguntas que costumamos ouvir</h2>
+    </div>
+    <div class="faq-list reveal" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============ OUTRAS SOLUÇÕES ============ -->
+<section class="pad" id="outras">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Outras soluções</span>
+      <h2>Para ir além da economia na conta</h2>
+      <p>Geração própria, eficiência e mobilidade elétrica, para quando fizer sentido no seu negócio.</p>
+    </div>
+    <div class="sol-grid" id="solGrid"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-cta reveal">
+      <h2>Sua próxima conta de luz pode vir <em>menor</em>.</h2>
+      <p>Envie a fatura agora ou fale com a gente. A análise é gratuita e sem compromisso.</p>
+      <div class="row">
+        <a href="#analise" class="btn btn-gold">Quero minha análise gratuita</a>
+        <a href="#" class="btn btn-ghost btn-wa" data-wa><svg class="ico"><use href="#i-wa"/></svg> Falar no WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="foot-grid">
+      <div class="foot-col">
+        <a href="#topo" class="logo" aria-label="AURIG Energy, voltar ao topo"><svg class="mark" aria-hidden="true"><use href="#i-mark"/></svg><span>AURIG<span class="sub"> Energy</span></span></a>
+        <p>Energia inteligente para quem leva o negócio a sério. Mercado livre, geração distribuída, solar e gestão de energia para empresas.</p>
+        <div class="lgpd"><svg class="ico"><use href="#i-shield"/></svg> Dados tratados conforme a LGPD</div>
+      </div>
+      <div class="foot-col">
+        <h4>Navegação</h4>
+        <a href="#solucoes">Soluções</a>
+        <a href="#como">Como funciona</a>
+        <a href="#agende">Agendar conversa</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="#outras">Outras soluções</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="#" class="wa" data-wa><svg class="ico"><use href="#i-wa"/></svg><span data-phone-label>(11) 99766-1060</span></a>
+        <a href="#" data-email><svg class="ico"><use href="#i-mail"/></svg><span data-email-label></span></a>
+        <a href="#" class="in" data-linkedin><svg class="ico"><use href="#i-in"/></svg>LinkedIn</a>
+        <button type="button" data-privacidade><svg class="ico"><use href="#i-lock"/></svg>Política de Privacidade</button>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="ano">2026</span> AURIG Energy. Todos os direitos reservados.</span>
+      <button type="button" data-privacidade>Política de Privacidade</button>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="wa-float" data-wa aria-label="Falar no WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+
+<div class="mobile-bar" id="mobileBar">
+  <a href="#analise" class="btn btn-gold">Análise gratuita</a>
+  <a href="#" class="btn btn-wa" data-wa aria-label="Falar no WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+</div>
+
+<div class="modal-overlay" id="modal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <button class="modal-close" type="button" aria-label="Fechar">&times;</button>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+
+<script>
+/* =====================================================================
+   CONFIGURAÇÃO · edite só aqui
+   ===================================================================== */
+const CONFIG = {
+  WHATSAPP_NUMBER: "5511997661060",
+  WHATSAPP_TEXT: "Olá! Vim pelo site da AURIG e quero reduzir a conta de luz da minha empresa.",
+  // Cole aqui o link do seu perfil (ex.: "https://www.linkedin.com/in/seu-perfil").
+  // Enquanto estiver vazio, os botões de LinkedIn ficam escondidos.
+  LINKEDIN_URL: "",
+  EMAIL: "", // ex.: "contato@aurigenergy.com.br" quando o e-mail existir
+  // URL do script do Google (termina em /exec). Ver aurig-receber-formularios.gs.
+  // Enquanto estiver vazio, os formulários mandam a pessoa para o seu WhatsApp.
+  FORM_ENDPOINT: "https://script.google.com/macros/s/AKfycbzJPlmGsg6ox5A2qyr-jUGEAJ52s1yQhaU0okWHc7XikGYW7ormvZgH0sZvyXC6rGPG7g/exec",
+  // Faixas do simulador (desconto típico na conta). Ajuste se quiser.
+  SIMULADOR: [
+    { ate: 10000,    via: "Geração distribuída compartilhada", min: 0.10, max: 0.20, nota: "Processo simplificado, desconto direto na conta" },
+    { ate: Infinity, via: "Mercado livre de energia",          min: 0.20, max: 0.35, nota: "Para empresas em média ou alta tensão" }
+  ],
+  MAX_MB: 10
+};
+
+/* ===================== Conteúdo: soluções e FAQ ===================== */
+const DESTAQUES = [
+  {
+    icon: "i-zap", badge: "Maior economia", title: "Mercado Livre de Energia",
+    short: "Sua empresa compra a energia direto de geradoras e comercializadoras, com preço negociado e previsível. A distribuidora continua cuidando da entrega.",
+    meta: ["Média e alta tensão", "Economia típica de 20% a 35%"],
+    bullets: ["Sem obra e sem investimento", "Preço negociado e previsível", "Fora das bandeiras tarifárias"],
+    desc: "Desde 2024, toda empresa atendida em média ou alta tensão (Grupo A) pode migrar para o mercado livre. Você escolhe de quem compra energia, por quanto tempo e a que preço. A distribuidora continua entregando a energia pela mesma rede; muda só quem vende. Cuidamos de toda a migração: estudo de viabilidade, contratação, adesão à CCEE e gestão mês a mês."
+  },
+  {
+    icon: "i-gd", badge: "Processo simplificado", title: "GD Compartilhada",
+    short: "Você recebe créditos de energia de usinas solares parceiras e paga menos na conta, sem instalar nada no seu imóvel.",
+    meta: ["Baixa tensão e contas menores", "Desconto típico de 10% a 20%"],
+    bullets: ["Nada para instalar", "Desconto em poucos ciclos de faturamento", "Energia 100% renovável"],
+    desc: "Usinas de geração distribuída produzem energia e injetam na rede. Os créditos são compensados na sua conta, e você paga por eles menos do que pagaria à distribuidora. É a forma mais simples de economizar para empresas em baixa tensão, inclusive redes com várias lojas ou unidades."
+  }
+];
+
+const SOLUCOES = [
+  { icon: "i-sun", title: "Energia Solar", short: "Usina própria no telhado ou em solo, do projeto à homologação.",
+    desc: "Sistemas fotovoltaicos projetados para o seu consumo. Cuidamos do dimensionamento, da engenharia, da instalação e da homologação na distribuidora para você gerar a própria energia.",
+    bullets: ["Dimensionamento pelo seu consumo real", "Engenharia e projeto sob medida", "Homologação na distribuidora", "Monitoramento da geração"] },
+  { icon: "i-battery", title: "Baterias (BESS)", short: "Armazenamento para cortar o custo da ponta e garantir autonomia.",
+    desc: "Sistemas de armazenamento que guardam energia para os momentos certos. Reduzem o custo no horário de ponta, garantem autonomia em quedas e deixam a operação mais estável.",
+    bullets: ["Redução do custo no horário de ponta", "Autonomia em quedas de energia", "Mais previsibilidade de custo", "Combina com solar e mercado livre"] },
+  { icon: "i-pulse", title: "Gestão de Utilities", short: "Energia, água e utilidades monitoradas em um só painel.",
+    desc: "Centralize o controle de energia, água e demais utilidades em um único painel. Visibilidade total, alertas e relatórios para decidir rápido e cortar desperdício.",
+    bullets: ["Painel único e centralizado", "Monitoramento em tempo real", "Alertas de consumo fora do padrão", "Relatórios mensais"] },
+  { icon: "i-sliders", title: "Automações", short: "Controle inteligente de cargas, climatização e iluminação.",
+    desc: "Automatizamos cargas, climatização e iluminação para reduzir desperdício e dar controle sobre o uso de energia em tempo real.",
+    bullets: ["Controle inteligente do consumo", "Menos desperdício", "Automação de cargas e climatização", "Eficiência contínua"] },
+  { icon: "i-car", title: "Eletropostos", short: "Recarga para veículos elétricos, da viabilidade à operação.",
+    desc: "Projetamos e implementamos estações de recarga para veículos elétricos, da análise de viabilidade à operação. Uma nova fonte de receita e de modernização para o seu negócio.",
+    bullets: ["Estudo de viabilidade", "Projeto e instalação sob medida", "Gestão e operação das estações", "Nova fonte de receita"] }
+];
+
+const FAQS = [
+  { q: "Preciso investir alguma coisa?",
+    a: "Não, para começar a economizar. No mercado livre e na GD compartilhada não há obra nem investimento inicial. Para solar e baterias, mostramos o investimento e o retorno com clareza antes de qualquer decisão." },
+  { q: "Minha conta é de R$ 500 a R$ 2 mil por mês. Vale a pena?",
+    a: "Vale. Para contas menores, o caminho costuma ser a GD compartilhada: desconto direto na conta, sem instalar nada. Em contas maiores, normalmente em média tensão, o mercado livre tende a trazer a maior economia. A análise mostra qual é o seu caso." },
+  { q: "Vou ter que trocar de distribuidora ou fazer alguma obra?",
+    a: "Não. A energia continua chegando pela mesma rede e a distribuidora segue responsável pela entrega e pela manutenção. No mercado livre e na GD compartilhada muda a forma de contratar a energia, não a sua instalação." },
+  { q: "Quanto tempo leva?",
+    a: "O estudo sai em até 2 dias úteis depois que recebemos a fatura. A partir daí, depende da solução: a GD compartilhada costuma começar em poucos ciclos de faturamento, e a migração para o mercado livre segue os prazos da distribuidora e da CCEE. Você acompanha cada etapa." },
+  { q: "Meus dados estão seguros?",
+    a: "Sim. Sua fatura e seus dados são usados exclusivamente para preparar a sua análise, ficam guardados com sigilo e são protegidos conforme a LGPD. Detalhes na <a href=\"#\" data-privacidade>Política de Privacidade</a>." },
+  { q: "Vocês atendem a minha região?",
+    a: "Atendemos empresas em todo o Brasil. A disponibilidade de cada solução varia por distribuidora, e a análise já confirma o que vale para o seu endereço." }
+];
+
+/* ============================ Utilidades ============================ */
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+const digitos = v => String(v || "").replace(/\D/g, "");
+const esc = v => String(v).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const ico = (id, cls = "ico") => `<svg class="${cls}" aria-hidden="true"><use href="#${id}"/></svg>`;
+
+function waUrl(texto) {
+  return "https://wa.me/" + CONFIG.WHATSAPP_NUMBER + "?text=" + encodeURIComponent(texto || CONFIG.WHATSAPP_TEXT);
+}
+function telLegivel(n) {
+  const d = digitos(n).replace(/^55/, "");
+  return d.length === 11 ? `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}` : d;
+}
+function moeda(n) {
+  if (n >= 1e6) return "R$ " + (n / 1e6).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mi";
+  if (n >= 1e4) return "R$ " + (n / 1e3).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mil";
+  return "R$ " + (Math.round(n / 10) * 10).toLocaleString("pt-BR");
+}
+function mascaraTel(v) {
+  const d = digitos(v).slice(0, 11);
+  if (d.length > 10) return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+  if (d.length > 6) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+  if (d.length > 2) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+  return d ? `(${d}` : "";
+}
+function mascaraMoeda(v) {
+  const d = digitos(v).slice(0, 9);
+  return d ? Number(d).toLocaleString("pt-BR") : "";
+}
+
+/* ============================ Links fixos ============================ */
+function aplicarLinks(raiz = document) {
+  $$("[data-wa]", raiz).forEach(a => {
+    a.href = waUrl(a.dataset.waText);
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+}
+aplicarLinks();
+$$("[data-phone-label]").forEach(el => el.textContent = telLegivel(CONFIG.WHATSAPP_NUMBER));
+$$("[data-linkedin]").forEach(a => {
+  if (CONFIG.LINKEDIN_URL) { a.href = CONFIG.LINKEDIN_URL; a.target = "_blank"; a.rel = "noopener"; }
+  else a.remove();
+});
+$$("[data-email]").forEach(a => {
+  if (CONFIG.EMAIL) { a.href = "mailto:" + CONFIG.EMAIL; $("[data-email-label]", a).textContent = CONFIG.EMAIL; }
+  else a.remove();
+});
+$("#ano").textContent = new Date().getFullYear();
+
+/* ============================ Soluções ============================ */
+const featGrid = $("#featGrid");
+DESTAQUES.forEach((s, i) => {
+  const el = document.createElement("article");
+  el.className = "feat reveal d" + (i + 1);
+  el.tabIndex = 0;
+  el.setAttribute("role", "button");
+  el.setAttribute("aria-label", s.title + ": saiba mais");
+  el.innerHTML = `
+    <div class="top"><span class="icw">${ico(s.icon)}</span><span class="badge">${s.badge}</span></div>
+    <h3>${s.title}</h3>
+    <p>${s.short}</p>
+    <div class="meta">${s.meta.map(m => `<span>${m}</span>`).join("")}</div>
+    <ul>${s.bullets.map(b => `<li>${ico("i-check")}${b}</li>`).join("")}</ul>
+    <span class="more">Como funciona ${ico("i-arrow")}</span>`;
+  const abrir = () => abrirSolucao(s);
+  el.addEventListener("click", abrir);
+  el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); abrir(); } });
+  featGrid.appendChild(el);
+});
+const solGrid = $("#solGrid");
+SOLUCOES.forEach((s, i) => {
+  const el = document.createElement("button");
+  el.type = "button";
+  el.className = "sol reveal d" + ((i % 4) + 1);
+  el.innerHTML = `<span class="icw">${ico(s.icon)}</span><h3>${s.title}</h3><p>${s.short}</p><span class="more">Saiba mais ${ico("i-arrow")}</span>`;
+  el.addEventListener("click", () => abrirSolucao(s));
+  solGrid.appendChild(el);
+});
+
+/* ============================ Modal ============================ */
+const modal = $("#modal"), modalBox = $(".modal", modal), modalBody = $(".modal-body", modal);
+let focoAnterior = null;
+function abrirModal(html, largo) {
+  focoAnterior = document.activeElement;
+  modalBody.innerHTML = html;
+  modalBox.classList.toggle("wide", !!largo);
+  aplicarLinks(modalBody);
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  modalBox.scrollTop = 0;
+  setTimeout(() => $(".modal-close", modal).focus(), 50);
+}
+function fecharModal() {
+  if (!modal.classList.contains("open")) return;
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  if (focoAnterior) focoAnterior.focus({ preventScroll: true });
+}
+$(".modal-close", modal).addEventListener("click", fecharModal);
+modal.addEventListener("click", e => {
+  if (e.target === modal) fecharModal();
+  if (e.target.closest(".modal-body a[href^='#']")) fecharModal();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") { fecharModal(); fecharMenu(); } });
+
+function abrirSolucao(s) {
+  abrirModal(`
+    <span class="icw">${ico(s.icon)}</span>
+    <h3 id="modalTitulo">${s.title}</h3>
+    <p>${s.desc}</p>
+    <ul>${s.bullets.map(b => `<li>${ico("i-check")}<span>${b}</span></li>`).join("")}</ul>
+    <a href="#analise" class="btn btn-gold w100">Ver se faz sentido para mim ${ico("i-arrow")}</a>`);
+}
+
+function abrirPrivacidade() {
+  const email = CONFIG.EMAIL ? `pelo e-mail <b>${esc(CONFIG.EMAIL)}</b> ou ` : "";
+  abrirModal(`
+    <h3 id="modalTitulo">Política de Privacidade</h3>
+    <div class="legal">
+      <p>Última atualização: outubro de 2026.</p>
+      <h4>1. Quem somos</h4>
+      <p>A AURIG Energy (“AURIG”) é a responsável pelos dados enviados por este site.</p>
+      <h4>2. Quais dados coletamos</h4>
+      <p>Nome, WhatsApp, e-mail, empresa, valor aproximado da conta e a fatura de energia enviada, que pode conter CPF ou CNPJ, endereço, número da unidade consumidora e histórico de consumo. Também registramos a página de origem da visita.</p>
+      <h4>3. Para que usamos</h4>
+      <p>Para preparar a análise de economia, falar com você sobre ela e, se você quiser seguir, elaborar a proposta.</p>
+      <h4>4. Base legal</h4>
+      <p>Seu consentimento e a execução de procedimentos preliminares a um contrato, a seu pedido (LGPD, art. 7º, incisos I e V).</p>
+      <h4>5. Segurança e sigilo</h4>
+      <p>Seus dados ficam guardados em serviços de nuvem seguros usados pela AURIG (como o Google), com acesso restrito à nossa equipe. Se você aprovar uma proposta, usamos apenas o necessário para colocá-la em prática, como a contratação da energia em seu nome.</p>
+      <h4>6. Por quanto tempo guardamos</h4>
+      <p>Até 12 meses após o último contato, se não houver contrato, ou pelo prazo que a lei exigir.</p>
+      <h4>7. Seus direitos</h4>
+      <p>Você pode pedir acesso, correção, portabilidade ou exclusão dos seus dados e revogar o consentimento a qualquer momento, ${email}pelo WhatsApp <b>${telLegivel(CONFIG.WHATSAPP_NUMBER)}</b>.</p>
+    </div>`, true);
+}
+document.addEventListener("click", e => {
+  const p = e.target.closest("[data-privacidade]");
+  if (p) { e.preventDefault(); abrirPrivacidade(); }
+});
+
+/* ============================ FAQ ============================ */
+$("#faqList").innerHTML = FAQS.map(f =>
+  `<details><summary>${f.q}<span class="plus" aria-hidden="true"></span></summary><div class="ans">${f.a}</div></details>`
+).join("");
+
+/* ============================ Simulador ============================ */
+(function simulador() {
+  const inp = $("#simValor"), rng = $("#simRange");
+  const MIN = 500, MAX = 500000, PASSOS = 1000;
+  const paraFaixa = v => Math.round(PASSOS * Math.log(Math.min(Math.max(v, MIN), MAX) / MIN) / Math.log(MAX / MIN));
+  const daFaixa = t => {
+    const v = MIN * Math.pow(MAX / MIN, t / PASSOS);
+    const passo = v < 2000 ? 50 : v < 10000 ? 100 : v < 100000 ? 500 : 5000;
+    return Math.round(v / passo) * passo;
+  };
+  function calcular(v) {
+    const ano = $("#simAno"), mes = $("#simMes"), via = $("#simVia"), pct = $("#simPct");
+    rng.style.setProperty("--p", (paraFaixa(v) / PASSOS * 100) + "%");
+    if (!v || v < MIN) {
+      ano.textContent = "—"; mes.textContent = "";
+      via.textContent = "atendemos contas a partir de R$ 500/mês";
+      pct.textContent = "";
+      return;
+    }
+    const f = CONFIG.SIMULADOR.find(x => v <= x.ate) || CONFIG.SIMULADOR[CONFIG.SIMULADOR.length - 1];
+    ano.textContent = `${moeda(v * f.min * 12)} a ${moeda(v * f.max * 12)}`;
+    mes.textContent = `≈ ${moeda(v * f.min)} a ${moeda(v * f.max)} por mês`;
+    via.textContent = f.via;
+    pct.textContent = `${Math.round(f.min * 100)}% a ${Math.round(f.max * 100)}% na conta · ${f.nota}`;
+  }
+  inp.addEventListener("input", () => {
+    inp.value = mascaraMoeda(inp.value);
+    const v = Number(digitos(inp.value));
+    rng.value = paraFaixa(v);
+    calcular(v);
+  });
+  rng.addEventListener("input", () => {
+    const v = daFaixa(Number(rng.value));
+    inp.value = v.toLocaleString("pt-BR");
+    calcular(v);
+  });
+  const inicial = Number(digitos(inp.value)) || 8000;
+  rng.value = paraFaixa(inicial);
+  calcular(inicial);
+  $("#simCta").addEventListener("click", () => {
+    const v = digitos(inp.value);
+    if (v) $("#fValor").value = mascaraMoeda(v);
+  });
+})();
+
+/* ============================ Formulários ============================ */
+$$("[data-phone]").forEach(i => i.addEventListener("input", () => { i.value = mascaraTel(i.value); }));
+$$("[data-money]").forEach(i => i.addEventListener("input", () => { i.value = mascaraMoeda(i.value); }));
+(function dataMinima() {
+  const d = new Date(), z = n => String(n).padStart(2, "0");
+  $("#rData").min = `${d.getFullYear()}-${z(d.getMonth() + 1)}-${z(d.getDate())}`;
+})();
+
+const TIPOS = { pdf: "application/pdf", jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp", heic: "image/heic", heif: "image/heif" };
+let arquivoAtual = null;
+const dz = $("#dropzone"), fileInput = $("#fileInput");
+["dragenter", "dragover"].forEach(ev => dz.addEventListener(ev, () => dz.classList.add("drag")));
+["dragleave", "drop"].forEach(ev => dz.addEventListener(ev, () => dz.classList.remove("drag")));
+fileInput.addEventListener("change", () => escolherArquivo(fileInput.files[0]));
+
+function escolherArquivo(f) {
+  const titulo = $("#dzTitulo"), sub = $("#dzSub"), icone = $("#dzIco use");
+  dz.classList.remove("has", "bad");
+  arquivoAtual = null;
+  if (!f) { titulo.textContent = "Arraste sua fatura aqui ou toque para escolher"; sub.textContent = "PDF, JPG ou PNG · até " + CONFIG.MAX_MB + " MB"; icone.setAttribute("href", "#i-upload"); return; }
+  const ext = (f.name.split(".").pop() || "").toLowerCase();
+  if (!TIPOS[ext] && !/^image\/|pdf$/.test(f.type)) {
+    dz.classList.add("bad"); titulo.textContent = "Formato não aceito"; sub.textContent = "Envie PDF, JPG ou PNG."; fileInput.value = ""; return;
+  }
+  if (f.size > CONFIG.MAX_MB * 1024 * 1024) {
+    dz.classList.add("bad"); titulo.textContent = "Arquivo grande demais"; sub.textContent = "O limite é " + CONFIG.MAX_MB + " MB. Tente um PDF ou uma foto menor."; fileInput.value = ""; return;
+  }
+  arquivoAtual = f;
+  dz.classList.add("has");
+  icone.setAttribute("href", "#i-filecheck");
+  titulo.textContent = f.name;
+  sub.textContent = (f.size / 1024 / 1024).toFixed(1).replace(".", ",") + " MB · toque para trocar";
+}
+
+function lerArquivo(f) {
+  return new Promise((ok, falha) => {
+    const r = new FileReader();
+    r.onload = () => ok({
+      nome: f.name,
+      mimeType: f.type || TIPOS[(f.name.split(".").pop() || "").toLowerCase()] || "application/octet-stream",
+      base64: String(r.result).split(",")[1]
+    });
+    r.onerror = () => falha(new Error("Não conseguimos ler o arquivo. Tente outro."));
+    r.readAsDataURL(f);
+  });
+}
+
+function origemVisita() {
+  const q = new URLSearchParams(location.search);
+  return {
+    utm_source: q.get("utm_source") || "", utm_medium: q.get("utm_medium") || "", utm_campaign: q.get("utm_campaign") || "",
+    referrer: document.referrer || "", pagina: location.href.split("#")[0]
+  };
+}
+
+async function enviar(dados) {
+  // text/plain evita o "preflight" de CORS, que o Google Apps Script não responde.
+  const r = await fetch(CONFIG.FORM_ENDPOINT, { method: "POST", body: JSON.stringify(dados) });
+  let j = null;
+  try { j = await r.json(); } catch (_) { /* resposta sem JSON */ }
+  if (!r.ok || !j || !j.ok) throw new Error((j && j.error) || "Não conseguimos enviar agora.");
+  return j;
+}
+
+function mensagemWhats(d) {
+  const linhas = [
+    d.tipo === "fatura" ? "Olá! Quero a análise gratuita da conta de luz da minha empresa." : "Olá! Quero agendar uma conversa sobre a energia da minha empresa.",
+    "Nome: " + d.nome,
+    d.empresa && "Empresa: " + d.empresa,
+    d.valor_conta && "Conta mensal: R$ " + d.valor_conta,
+    d.data && "Data preferida: " + d.data.split("-").reverse().join("/"),
+    d.periodo && "Período: " + d.periodo,
+    d.tipo === "fatura" ? "Vou anexar a fatura aqui." : ""
+  ];
+  return linhas.filter(Boolean).join("\n");
+}
+
+function prepararFormulario(form, sucesso, tipo) {
+  const inicio = Date.now();
+  const msg = $(".form-msg", form), btn = $("button[type=submit]", form), rotulo = btn.innerHTML;
+
+  form.addEventListener("input", e => {
+    const f = e.target.closest(".field"); if (f) f.classList.remove("bad");
+    if (e.target.name === "consentimento") e.target.closest(".consent").classList.remove("bad");
+  });
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    msg.className = "form-msg"; msg.textContent = "";
+
+    // Validação
+    const erros = [];
+    const marca = (el, texto) => { (el.closest(".field") || el.closest(".consent") || el).classList.add("bad"); erros.push({ el, texto }); };
+    if (!form.nome.value.trim()) marca(form.nome, "Informe seu nome.");
+    if (digitos(form.whatsapp.value).length < 10) marca(form.whatsapp, "Informe um WhatsApp com DDD.");
+    if (form.email.value && !form.email.checkValidity()) marca(form.email, "Confira o e-mail.");
+    if (tipo === "fatura" && !arquivoAtual) marca(dz, "Anexe sua fatura (PDF ou foto).");
+    if (!form.consentimento.checked) marca(form.consentimento, "Marque a autorização para continuarmos.");
+    if (erros.length) {
+      msg.className = "form-msg err";
+      msg.textContent = erros.map(x => x.texto).join(" ");
+      (erros[0].el === dz ? fileInput : erros[0].el).focus({ preventScroll: false });
+      return;
+    }
+
+    const dados = Object.assign({
+      tipo,
+      nome: form.nome.value.trim(),
+      whatsapp: form.whatsapp.value.trim(),
+      empresa: form.empresa.value.trim(),
+      email: form.email.value.trim(),
+      valor_conta: form.valor_conta ? digitos(form.valor_conta.value) : "",
+      data: form.data ? form.data.value : "",
+      periodo: form.periodo ? form.periodo.value : "",
+      consentimento: true,
+      website: form.website.value
+    }, origemVisita());
+
+    // Robô (campo invisível preenchido ou envio instantâneo): finge sucesso e ignora.
+    if (dados.website || Date.now() - inicio < 2500) { mostrarSucesso(form, sucesso, dados, false); return; }
+
+    // Sem endpoint configurado: manda para o WhatsApp para não perder o contato.
+    if (!CONFIG.FORM_ENDPOINT) {
+      window.open(waUrl(mensagemWhats(dados)), "_blank", "noopener");
+      mostrarSucesso(form, sucesso, dados, true);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spin" aria-hidden="true"></span> Enviando…';
+    try {
+      if (tipo === "fatura") dados.arquivo = await lerArquivo(arquivoAtual);
+      await enviar(dados);
+      mostrarSucesso(form, sucesso, dados, false);
+    } catch (err) {
+      msg.className = "form-msg err";
+      msg.innerHTML = esc(err.message || "Não conseguimos enviar agora.") +
+        ` <a href="#" data-wa data-wa-text="${esc(mensagemWhats(dados))}">Envie pelo WhatsApp</a>.`;
+      aplicarLinks(msg);
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = rotulo;
+    }
+  });
+}
+
+function mostrarSucesso(form, sucesso, d, viaWhats) {
+  const primeiro = (d.nome || "").split(" ")[0];
+  const titulo = $("[data-ok-title]", sucesso), texto = $("[data-ok-text]", sucesso);
+  if (viaWhats) {
+    titulo.textContent = "Abrimos o WhatsApp para você";
+    texto.textContent = d.tipo === "fatura"
+      ? "É só enviar a mensagem e anexar a foto ou o PDF da fatura por lá."
+      : "É só enviar a mensagem que confirmamos o horário por lá.";
+  } else if (d.tipo === "fatura") {
+    titulo.textContent = `Recebemos sua conta${primeiro ? ", " + primeiro : ""}!`;
+    texto.textContent = `Em até 2 dias úteis você recebe o estudo de economia no WhatsApp ${d.whatsapp}.`;
+  } else {
+    titulo.textContent = `Pedido recebido${primeiro ? ", " + primeiro : ""}!`;
+    texto.textContent = `Vamos confirmar o horário com você pelo WhatsApp ${d.whatsapp}.`;
+  }
+  form.style.display = "none";
+  sucesso.classList.add("show");
+  sucesso.focus({ preventScroll: true });
+}
+
+prepararFormulario($("#faturaForm"), $("#faturaOk"), "fatura");
+prepararFormulario($("#reuniaoForm"), $("#reuniaoOk"), "reuniao");
+
+/* ============================ Navegação ============================ */
+const header = $("#header"), barra = $("#mobileBar");
+function aoRolar() {
+  const y = window.scrollY;
+  header.classList.toggle("scrolled", y > 30);
+  barra.classList.toggle("show", y > 520);
+}
+window.addEventListener("scroll", aoRolar, { passive: true });
+aoRolar();
+
+const nav = $("#mobileNav"), toggle = $("#menuToggle");
+function fecharMenu() {
+  if (!nav.classList.contains("open")) return;
+  nav.classList.remove("open"); nav.setAttribute("aria-hidden", "true");
+  toggle.setAttribute("aria-expanded", "false"); document.body.style.overflow = "";
+}
+toggle.addEventListener("click", () => {
+  nav.classList.add("open"); nav.setAttribute("aria-hidden", "false");
+  toggle.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden";
+});
+$("#mobileClose").addEventListener("click", fecharMenu);
+$$("a", nav).forEach(a => a.addEventListener("click", fecharMenu));
+
+/* ============================ Animação ao rolar ============================ */
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(entradas => {
+    entradas.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  $$(".reveal").forEach(el => io.observe(el));
+} else {
+  $$(".reveal").forEach(el => el.classList.add("in"));
+}
+</script>
+</body>
+</html>
